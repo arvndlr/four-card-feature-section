@@ -48,7 +48,7 @@ ol {
 }
 
 .fourcards {
-    display: grid;
+    display: flex;
     margin: auto;
     justify-content: center;
 }
@@ -58,5 +58,5 @@ ol {
     align-items: center;
 }
 .fourcards__cont {
-    max-width: 100%;
+    max-width: 80vw;
 }
