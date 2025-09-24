@@ -72,7 +72,7 @@ ol {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    margin-top: 6em;
+    margin-top: 1em;
 }
 .fourcards__cat {
   font-family: Roboto;
@@ -94,10 +94,30 @@ ol {
   max-width: 80vw;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
+  gap: 1em;
 }
 .fourcards__item-title {
   font-size: 1.25em;
 }
 .fourcards__item {
-  max-width: 28.75em;
+  display: flex;
+  flex-direction: column;
+  max-width: 21.875em;
+  height: 14.0625em;
+  padding-block: 2em;
+  padding-inline: 1em;
+  justify-content: space-between;
+}
+.fourcards__item picture {
+  display: flex;
+  justify-content: flex-end;
+}
+.fourcards__sides {
+  display: flex;
+  align-items: center;
+}
+.fourcards__center {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
 }
