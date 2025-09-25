@@ -36,21 +36,24 @@ ol {
 }
 
 @font-face {
-    font-family: "RedHatDisplay";
-    src: url("./assets/fonts/RedHatDisplay-VariableFont_wght.ttf") format("truetype");
-    font-style: normal;
+  font-family: "RedHatDisplay";
+  src: url("./assets/fonts/RedHatDisplay-VariableFont_wght.ttf") format("truetype");
+  font-style: normal;
 }
 
 @font-face {
-    font-family: "Roboto";
-    src: url("./assets/fonts/Roboto-VariableFont_wdth\,wght.ttf") format("truetype");
-    font-style: normal;
+  font-family: "Roboto";
+  src: url("./assets/fonts/Roboto-VariableFont_wdth,wght.ttf") format("truetype");
+  font-style: normal;
 }
+
 @font-face {
-    font-family: "Alumni Sans Pinstripe";
-    src: url("./assets/fonts/AlumniSansPinstripe-Regular.ttf") format("truetype");
-    font-style: normal;
+  font-family: "Alumni Sans Pinstripe";
+  src: url("./assets/fonts/AlumniSansPinstripe-Regular.ttf") format("truetype");
+  font-style: normal;
 }
+
+/* VARIABLES */
 :root {
   --bg-color: #fafafa;
   --surface: #ffffff;
@@ -58,77 +61,135 @@ ol {
   --item-two: #e15658;
   --item-three: #f2b261;
   --item-four: #5a9be1;
-  font-family: Roboto;
-  font-size: 12px;
+
+  font-family: "Roboto", sans-serif;
+  font-size: 15px;
 }
+
+/* LAYOUT */
+body {
+  background: var(--bg-color);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  flex-direction: column;
+}
+
 .fourcards {
-    display: flex;
-    margin: auto;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
-.fourcards__header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-}
-.fourcards__cat {
-  font-family: Roboto;
-  font-weight: 100;
-  font-size: 2.125em;
-}
-.fourcards__title {
-  font-family: Roboto;
-  font-size: 2.125em;
-}
-.fourcards__desc {
-  font-family: Roboto;
-  max-width: 32.5em;
-  text-align: center;
-}
-.fourcards__cont {
-  max-width: 80vw;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 1em;
-}
-.fourcards__item-title {
-  font-size: 1.25em;
-}
-.fourcards__item {
+  max-width: 1200px;
+  margin: auto;
   display: flex;
   flex-direction: column;
-  max-width: 21.875em;
-  height: 14.0625em;
-  padding-block: 2em;
-  padding-inline: 1em;
-  justify-content: space-between;
-  box-shadow: 0.1875em 0.3125em  0.1875em gray;
+  align-items: center;
+  gap: 3rem;
 }
+
+.fourcards__header {
+  text-align: center;
+  max-width: 600px;
+}
+
+.fourcards__cat {
+  font-weight: 200;
+  font-size: 1.8rem;
+  color: #555;
+}
+
+.fourcards__title {
+  font-weight: 700;
+  font-size: 1.9rem;
+  margin-block: 0.5rem;
+  color: #2b2b2b;
+}
+
+.fourcards__desc {
+  font-size: 1rem;
+  color: #888;
+  line-height: 1.6;
+}
+
+/* GRID */
+.fourcards__cont {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  align-items: center;
+}
+
+.fourcards__center {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.fourcards__sides {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* CARDS */
+.fourcards__item {
+  background: var(--surface);
+  border-radius: 0.5rem;
+  padding: 2rem;
+  height: 100%;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.2s ease-in-out;
+}
+
+.fourcards__item:hover {
+  transform: translateY(-5px);
+}
+
+.fourcards__item-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.fourcards__item-desc {
+  font-size: 0.95rem;
+  color: #666;
+  line-height: 1.5;
+}
+
 .fourcards__item picture {
   display: flex;
   justify-content: flex-end;
 }
-.fourcards__sides {
-  display: flex;
-  align-items: center;
-}
-.fourcards__center {
-  display: flex;
-  flex-direction: column;
-  gap: 1em;
-}
+
 .fourcards__item-one {
-  border-top: 0.25em solid var(--item-one);
+  border-top: 4px solid var(--item-one);
 }
+
 .fourcards__item-two {
-  border-top: 0.25em solid var(--item-two);
+  border-top: 4px solid var(--item-two);
 }
+
 .fourcards__item-three {
-  border-top: 0.25em solid var(--item-three);
+  border-top: 4px solid var(--item-three);
 }
+
 .fourcards__item-four {
-  border-top: 0.25em solid var(--item-four);
+  border-top: 4px solid var(--item-four);
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+  .fourcards__cont {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .fourcards__cont {
+    grid-template-columns: 1fr;
+  }
 }
